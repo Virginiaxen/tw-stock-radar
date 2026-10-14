@@ -1,0 +1,32 @@
+name: Update Taiwan stock data
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 9 * * 1-5' # 17:20 Asia/Taipei (UTC+8), market close data may still lag
+permissions:
+  contents: write
+concurrency:
+  group: update-stock-data
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refresh snapshot
+        env:
+          FINMIND_TOKEN: ${{ secrets.FINMIND_TOKEN }}
+        run: python scripts/build_data.py
+      - name: Commit updated data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/snapshot.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update stock snapshot'
+            git push
+          fi

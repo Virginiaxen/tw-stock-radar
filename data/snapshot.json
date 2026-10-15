@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-14T09:51:21.629999+00:00",
+  "generated_at_utc": "2026-10-15T01:36:06.709139+00:00",
   "provider": "FinMind API v4",
   "provider_url": "https://finmind.github.io/",
   "stocks": [
@@ -1480,6 +1480,14 @@
           "revenue": 511857399000.0
         }
       ],
+      "revenue_analysis": {
+        "latest_month": "2026-10",
+        "latest_revenue": 511857399000.0,
+        "prior_year_revenue": 330980920000.0,
+        "yoy_pct": 54.65,
+        "yoy_status": "已計算",
+        "warnings": []
+      },
       "errors": []
     },
     {
@@ -2958,6 +2966,14 @@
           "revenue": 1158633235000.0
         }
       ],
+      "revenue_analysis": {
+        "latest_month": "2026-10",
+        "latest_revenue": 1158633235000.0,
+        "prior_year_revenue": 837067572000.0,
+        "yoy_pct": 38.42,
+        "yoy_status": "已計算",
+        "warnings": []
+      },
       "errors": []
     },
     {
@@ -4436,6 +4452,14 @@
           "revenue": 55399497000.0
         }
       ],
+      "revenue_analysis": {
+        "latest_month": "2026-10",
+        "latest_revenue": 55399497000.0,
+        "prior_year_revenue": 54330057000.0,
+        "yoy_pct": 1.97,
+        "yoy_status": "已計算",
+        "warnings": []
+      },
       "errors": []
     },
     {
@@ -5914,6 +5938,14 @@
           "revenue": 65399563000.0
         }
       ],
+      "revenue_analysis": {
+        "latest_month": "2026-10",
+        "latest_revenue": 65399563000.0,
+        "prior_year_revenue": 57060781000.0,
+        "yoy_pct": 14.61,
+        "yoy_status": "已計算",
+        "warnings": []
+      },
       "errors": []
     },
     {
@@ -7392,6 +7424,16 @@
           "revenue": 29486864000.0
         }
       ],
+      "revenue_analysis": {
+        "latest_month": "2026-09",
+        "latest_revenue": 29486864000.0,
+        "prior_year_revenue": 46429024000.0,
+        "yoy_pct": -36.49,
+        "yoy_status": "已計算",
+        "warnings": [
+          "2025-07 月營收為負數，請核對來源與會計口徑"
+        ]
+      },
       "errors": []
     },
     {
@@ -8870,6 +8912,14 @@
           "revenue": 24401509000.0
         }
       ],
+      "revenue_analysis": {
+        "latest_month": "2026-09",
+        "latest_revenue": 24401509000.0,
+        "prior_year_revenue": 25028996000.0,
+        "yoy_pct": -2.51,
+        "yoy_status": "已計算",
+        "warnings": []
+      },
       "errors": []
     },
     {
@@ -10348,6 +10398,14 @@
           "revenue": 49711309000.0
         }
       ],
+      "revenue_analysis": {
+        "latest_month": "2026-10",
+        "latest_revenue": 49711309000.0,
+        "prior_year_revenue": 30120944000.0,
+        "yoy_pct": 65.04,
+        "yoy_status": "已計算",
+        "warnings": []
+      },
       "errors": []
     },
     {
@@ -11720,6 +11778,14 @@
         "note": "EPS 原始紀錄；不自動假設為近四季 EPS。請核對季別與累計口徑。"
       },
       "monthly_revenue": [],
+      "revenue_analysis": {
+        "latest_month": null,
+        "latest_revenue": null,
+        "prior_year_revenue": null,
+        "yoy_pct": null,
+        "yoy_status": "無月營收資料",
+        "warnings": []
+      },
       "errors": []
     }
   ],

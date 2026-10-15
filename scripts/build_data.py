@@ -85,6 +85,58 @@ def revenue_analysis(records, today=None):
             result['yoy_status'] = '已計算'
     return result
 
+def validate_eps(records, today=None):
+    """Validate FinMind single-quarter EPS records; do not infer split-adjusted TTM."""
+    today = today or dt.date.today()
+    by_date = {}
+    warnings = []
+    for item in records:
+        raw_date = item.get('date')
+        value = finite(item.get('value'))
+        try:
+            d = dt.date.fromisoformat(str(raw_date)[:10])
+        except (ValueError, TypeError):
+            warnings.append(f'無效 EPS 財報日期：{str(raw_date)[:30]}')
+            continue
+        if (d.month, d.day) not in ((3, 31), (6, 30), (9, 30), (12, 31)):
+            warnings.append(f'{d.isoformat()} 不是標準季度結束日')
+            continue
+        if d > today:
+            warnings.append(f'{d.isoformat()} 是未來財報日期，已排除')
+            continue
+        if value is None:
+            warnings.append(f'{d.isoformat()} EPS 非有效數字')
+            continue
+        by_date.setdefault(d, []).append(value)
+    for d, values in sorted(by_date.items()):
+        if len(values) != 1:
+            warnings.append(f'{d.isoformat()} EPS 有 {len(values)} 筆，禁止重複計算')
+    valid = sorted((d, vals[0]) for d, vals in by_date.items() if len(vals) == 1)
+    latest = valid[-1][0] if valid else None
+    recent = valid[-4:]
+    consecutive = False
+    if len(recent) == 4:
+        def qindex(d):
+            return d.year * 4 + (d.month // 3 - 1)
+        consecutive = all(qindex(recent[i + 1][0]) - qindex(recent[i][0]) == 1 for i in range(3))
+    if len(recent) < 4:
+        status = '近四季 EPS 資料不足'
+    elif not consecutive:
+        status = '最近四筆 EPS 季度不連續'
+    else:
+        status = '季度連續，但未驗證配股與股票分割調整'
+        warnings.append('FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM')
+    return {
+        'source': 'FinMind TaiwanStockFinancialStatements / EPS',
+        'basis': '單季基本每股盈餘（依 FinMind 官方文件）',
+        'latest_quarter': latest.isoformat() if latest else None,
+        'quarter_count': len(valid),
+        'last_four_consecutive': consecutive,
+        'ttm_eps': None,
+        'ttm_status': status,
+        'warnings': warnings,
+    }
+
 def build_one(stock, today):
     result={'id':stock,'updated_at':None,'price':None,'financials':{},'monthly_revenue':None,'revenue_analysis':None,'errors':[]}
     start=(today-dt.timedelta(days=440)).isoformat()
@@ -110,7 +162,7 @@ def build_one(stock, today):
                 if v is not None:eps.append({'date':x.get('date'),'value':v})
         eps.sort(key=lambda x:x['date'] or '')
         # Financial dataset conventions can differ; show EPS as source data, never assume TTM without validated quarters.
-        result['financials']={'eps_records':eps[-12:],'note':'EPS 原始紀錄；不自動假設為近四季 EPS。請核對季別與累計口徑。'}
+        result['financials']={'eps_records':eps[-12:],'eps_validation':validate_eps(eps,today),'note':'FinMind EPS 為單季值；未驗證配股／分割調整前，不提供 TTM EPS。'}
     except Exception as e:result['errors'].append('財報：'+str(e)[:180])
     try:
         rows=fetch('TaiwanStockMonthRevenue',stock,(today-dt.timedelta(days=500)).isoformat())

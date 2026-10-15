@@ -133,6 +133,19 @@ def validate_eps(records, today=None):
     else:
         status = '季度連續，但未驗證配股與股票分割調整'
         warnings.append('FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM')
+    # Corporate actions are NOT supplied by the EPS endpoint. Fail closed until
+    # independent, complete corporate-action evidence has been verified.
+    corporate_action_risk = {
+        'status': 'unverified',
+        'checked': False,
+        'stock_dividend_verified': False,
+        'stock_split_verified': False,
+        'lookback_start': recent[0][0].isoformat() if len(recent) == 4 else None,
+        'lookback_end': recent[-1][0].isoformat() if len(recent) == 4 else None,
+        'reason': '尚未接入並驗證完整的配股、股票分割與 EPS 追溯調整資料；不能判定為無風險',
+    }
+    if consecutive:
+        warnings.append('配股及股票分割風險尚未核實；TTM EPS 保持停用')
     return {
         'source': 'FinMind TaiwanStockFinancialStatements / EPS',
         'basis': '單季基本每股盈餘（依 FinMind 官方文件）',
@@ -142,6 +155,8 @@ def validate_eps(records, today=None):
         'invalid_record_count': invalid_count,
         'duplicate_quarter_count': duplicate_quarter_count,
         'last_four_consecutive': consecutive,
+        'corporate_action_risk': corporate_action_risk,
+        'ttm_eligible': False,
         'ttm_eps': None,
         'ttm_status': status,
         'warnings': warnings,
@@ -171,7 +186,7 @@ def build_one(stock, today):
                 eps.append({'date':x.get('date'),'value':x.get('value')})
         eps.sort(key=lambda x:str(x.get('date') or ''))
         # Financial dataset conventions can differ; show EPS as source data, never assume TTM without validated quarters.
-        result['financials']={'eps_records':[{'date':x['date'],'value':finite(x['value'])} for x in eps[-12:]],'eps_validation':validate_eps(eps,today),'note':'EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。'}
+        result['financials']={'eps_records':[{'date':x['date'],'value':finite(x['value'])} for x in eps[-12:]],'eps_validation':validate_eps(eps,today),'note':'EPS 依 FinMind 回傳值呈現；配股、股票分割與追溯調整尚未核實，TTM EPS 保持停用。'}
     except Exception as e:result['errors'].append('財報：'+str(e)[:180])
     try:
         rows=fetch('TaiwanStockMonthRevenue',stock,(today-dt.timedelta(days=500)).isoformat())

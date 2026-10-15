@@ -34,16 +34,22 @@ def rsi(vals,n=14):
     gain=sum(max(0,x) for x in diffs)/n;loss=sum(max(0,-x) for x in diffs)/n
     return round(100 if loss==0 else 100-100/(1+gain/loss),2)
 
-def revenue_analysis(records):
+def revenue_analysis(records, today=None):
     """Monthly revenue diagnostics; only positive, unique month pairs yield YoY."""
+    today = today or dt.date.today()
     by_month = {}
     warnings = []
+    current_month_start = today.replace(day=1)
     for item in records:
         date = item.get('date')
         try:
-            month = dt.date.fromisoformat(str(date)[:10]).strftime('%Y-%m')
+            parsed_date = dt.date.fromisoformat(str(date)[:10])
+            month = parsed_date.strftime('%Y-%m')
         except (TypeError, ValueError):
             warnings.append('月營收日期無效：' + str(date)[:30])
+            continue
+        if parsed_date >= current_month_start:
+            warnings.append(f'{month} 尚未結束或屬未來月份，已排除，請核對 FinMind 日期定義')
             continue
         by_month.setdefault(month, []).append(item['revenue'])
         if item['revenue'] < 0:
@@ -113,8 +119,18 @@ def build_one(stock, today):
             v=finite(x.get('revenue'))
             if v is not None:clean.append({'date':x.get('date'),'revenue':v})
         clean.sort(key=lambda x:x['date'] or '')
-        result['monthly_revenue']=clean[-15:]
-        result['revenue_analysis']=revenue_analysis(clean)
+        # Only completed calendar months are eligible for public display.
+        # This is a conservative date guard, not verification of the provider's month semantics.
+        month_start=today.replace(day=1)
+        eligible=[]
+        for item in clean:
+            try:
+                if dt.date.fromisoformat(str(item['date'])[:10]) < month_start:
+                    eligible.append(item)
+            except (TypeError,ValueError):
+                pass
+        result['monthly_revenue']=eligible[-15:]
+        result['revenue_analysis']=revenue_analysis(clean,today)
     except Exception as e:result['errors'].append('月營收：'+str(e)[:180])
     return result
 

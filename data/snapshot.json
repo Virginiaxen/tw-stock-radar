@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-15T02:26:14.472965+00:00",
+  "generated_at_utc": "2026-10-15T02:33:49.098403+00:00",
   "provider": "FinMind API v4",
   "provider_url": "https://finmind.github.io/",
   "stocks": [
@@ -1425,13 +1425,24 @@
           "invalid_record_count": 0,
           "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
+          "corporate_action_risk": {
+            "status": "unverified",
+            "checked": false,
+            "stock_dividend_verified": false,
+            "stock_split_verified": false,
+            "lookback_start": "2025-09-30",
+            "lookback_end": "2026-06-30",
+            "reason": "尚未接入並驗證完整的配股、股票分割與 EPS 追溯調整資料；不能判定為無風險"
+          },
+          "ttm_eligible": false,
           "ttm_eps": null,
           "ttm_status": "季度連續，但未驗證配股與股票分割調整",
           "warnings": [
-            "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM"
+            "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM",
+            "配股及股票分割風險尚未核實；TTM EPS 保持停用"
           ]
         },
-        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；配股、股票分割與追溯調整尚未核實，TTM EPS 保持停用。"
       },
       "monthly_revenue": [
         {
@@ -2928,13 +2939,24 @@
           "invalid_record_count": 0,
           "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
+          "corporate_action_risk": {
+            "status": "unverified",
+            "checked": false,
+            "stock_dividend_verified": false,
+            "stock_split_verified": false,
+            "lookback_start": "2025-09-30",
+            "lookback_end": "2026-06-30",
+            "reason": "尚未接入並驗證完整的配股、股票分割與 EPS 追溯調整資料；不能判定為無風險"
+          },
+          "ttm_eligible": false,
           "ttm_eps": null,
           "ttm_status": "季度連續，但未驗證配股與股票分割調整",
           "warnings": [
-            "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM"
+            "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM",
+            "配股及股票分割風險尚未核實；TTM EPS 保持停用"
           ]
         },
-        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；配股、股票分割與追溯調整尚未核實，TTM EPS 保持停用。"
       },
       "monthly_revenue": [
         {
@@ -4431,13 +4453,24 @@
           "invalid_record_count": 0,
           "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
+          "corporate_action_risk": {
+            "status": "unverified",
+            "checked": false,
+            "stock_dividend_verified": false,
+            "stock_split_verified": false,
+            "lookback_start": "2025-09-30",
+            "lookback_end": "2026-06-30",
+            "reason": "尚未接入並驗證完整的配股、股票分割與 EPS 追溯調整資料；不能判定為無風險"
+          },
+          "ttm_eligible": false,
           "ttm_eps": null,
           "ttm_status": "季度連續，但未驗證配股與股票分割調整",
           "warnings": [
-            "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM"
+            "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM",
+            "配股及股票分割風險尚未核實；TTM EPS 保持停用"
           ]
         },
-        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；配股、股票分割與追溯調整尚未核實，TTM EPS 保持停用。"
       },
       "monthly_revenue": [
         {
@@ -5934,13 +5967,24 @@
           "invalid_record_count": 0,
           "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
+          "corporate_action_risk": {
+            "status": "unverified",
+            "checked": false,
+            "stock_dividend_verified": false,
+            "stock_split_verified": false,
+            "lookback_start": "2025-09-30",
+            "lookback_end": "2026-06-30",
+            "reason": "尚未接入並驗證完整的配股、股票分割與 EPS 追溯調整資料；不能判定為無風險"
+          },
+          "ttm_eligible": false,
           "ttm_eps": null,
           "ttm_status": "季度連續，但未驗證配股與股票分割調整",
           "warnings": [
-            "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM"
+            "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM",
+            "配股及股票分割風險尚未核實；TTM EPS 保持停用"
           ]
         },
-        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；配股、股票分割與追溯調整尚未核實，TTM EPS 保持停用。"
       },
       "monthly_revenue": [
         {
@@ -7437,13 +7481,24 @@
           "invalid_record_count": 0,
           "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
+          "corporate_action_risk": {
+            "status": "unverified",
+            "checked": false,
+            "stock_dividend_verified": false,
+            "stock_split_verified": false,
+            "lookback_start": "2025-09-30",
+            "lookback_end": "2026-06-30",
+            "reason": "尚未接入並驗證完整的配股、股票分割與 EPS 追溯調整資料；不能判定為無風險"
+          },
+          "ttm_eligible": false,
           "ttm_eps": null,
           "ttm_status": "季度連續，但未驗證配股與股票分割調整",
           "warnings": [
-            "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM"
+            "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM",
+            "配股及股票分割風險尚未核實；TTM EPS 保持停用"
           ]
         },
-        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；配股、股票分割與追溯調整尚未核實，TTM EPS 保持停用。"
       },
       "monthly_revenue": [
         {
@@ -8940,13 +8995,24 @@
           "invalid_record_count": 0,
           "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
+          "corporate_action_risk": {
+            "status": "unverified",
+            "checked": false,
+            "stock_dividend_verified": false,
+            "stock_split_verified": false,
+            "lookback_start": "2025-09-30",
+            "lookback_end": "2026-06-30",
+            "reason": "尚未接入並驗證完整的配股、股票分割與 EPS 追溯調整資料；不能判定為無風險"
+          },
+          "ttm_eligible": false,
           "ttm_eps": null,
           "ttm_status": "季度連續，但未驗證配股與股票分割調整",
           "warnings": [
-            "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM"
+            "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM",
+            "配股及股票分割風險尚未核實；TTM EPS 保持停用"
           ]
         },
-        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；配股、股票分割與追溯調整尚未核實，TTM EPS 保持停用。"
       },
       "monthly_revenue": [
         {
@@ -10441,13 +10507,24 @@
           "invalid_record_count": 0,
           "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
+          "corporate_action_risk": {
+            "status": "unverified",
+            "checked": false,
+            "stock_dividend_verified": false,
+            "stock_split_verified": false,
+            "lookback_start": "2025-09-30",
+            "lookback_end": "2026-06-30",
+            "reason": "尚未接入並驗證完整的配股、股票分割與 EPS 追溯調整資料；不能判定為無風險"
+          },
+          "ttm_eligible": false,
           "ttm_eps": null,
           "ttm_status": "季度連續，但未驗證配股與股票分割調整",
           "warnings": [
-            "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM"
+            "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM",
+            "配股及股票分割風險尚未核實；TTM EPS 保持停用"
           ]
         },
-        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；配股、股票分割與追溯調整尚未核實，TTM EPS 保持停用。"
       },
       "monthly_revenue": [
         {
@@ -11899,11 +11976,21 @@
           "invalid_record_count": 0,
           "duplicate_quarter_count": 0,
           "last_four_consecutive": false,
+          "corporate_action_risk": {
+            "status": "unverified",
+            "checked": false,
+            "stock_dividend_verified": false,
+            "stock_split_verified": false,
+            "lookback_start": null,
+            "lookback_end": null,
+            "reason": "尚未接入並驗證完整的配股、股票分割與 EPS 追溯調整資料；不能判定為無風險"
+          },
+          "ttm_eligible": false,
           "ttm_eps": null,
           "ttm_status": "近四季 EPS 資料不足",
           "warnings": []
         },
-        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；配股、股票分割與追溯調整尚未核實，TTM EPS 保持停用。"
       },
       "monthly_revenue": [],
       "revenue_analysis": {

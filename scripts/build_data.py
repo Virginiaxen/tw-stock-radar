@@ -85,7 +85,57 @@ def revenue_analysis(records, today=None):
             result['yoy_status'] = '已計算'
     return result
 
-def validate_eps(records, today=None):
+def check_corporate_actions(stock, lookback_start, lookback_end):
+    """Flag positive stock dividends; split coverage remains unverified.
+
+    Dividend endpoint is a risk signal, not comprehensive corporate-action proof.
+    Do not classify the absence of a record as verified/safe.
+    """
+    report = {'status': 'unverified', 'checked': False,
+              'stock_dividend_verified': False, 'stock_split_verified': False,
+              'lookback_start': lookback_start, 'lookback_end': lookback_end,
+              'source': 'FinMind TaiwanStockDividend', 'events': [],
+              'reason': '股票分割及 EPS 追溯調整未獨立驗證；不能判定無風險'}
+    if not lookback_start or not lookback_end:
+        report['reason'] = '不足四個連續季度，無法建立檢查期間'
+        return report
+    try:
+        rows = fetch('TaiwanStockDividend', stock, lookback_start)
+    except Exception as e:
+        report['reason'] = '股利資料讀取失敗，維持未驗證：' + str(e)[:140]
+        return report
+    report['checked'] = True  # Queried dividend endpoint only; NOT complete verification.
+    # Provider convention: StockEarningsDistribution is stock dividend per share.
+    # If absent or malformed, do not interpret as zero.
+    unknown = False
+    for row in rows:
+        raw_date = row.get('date')
+        try:
+            d = dt.date.fromisoformat(str(raw_date)[:10])
+        except (ValueError, TypeError):
+            unknown = True
+            continue
+        if not (lookback_start <= d.isoformat() <= lookback_end):
+            continue
+        raw = row.get('StockEarningsDistribution')
+        val = finite(raw)
+        if val is None:
+            unknown = True
+            continue
+        if val > 0:
+            report['events'].append({'date': d.isoformat(), 'kind': 'stock_dividend',
+                                     'value': val})
+    if report['events']:
+        report['status'] = 'risk_detected'
+        report['reason'] = '偵測到股票股利；尚未驗證 EPS 是否已按股數變動追溯調整'
+    elif unknown:
+        report['reason'] = '股利資料欄位缺漏或日期異常，且股票分割未驗證'
+    else:
+        report['reason'] = '股利端點未發現正數股票股利；股票分割與歷史 EPS 調整仍未驗證'
+    return report
+
+
+def validate_eps(records, today=None, stock=None):
     """Validate FinMind single-quarter EPS records; do not infer split-adjusted TTM."""
     today = today or dt.date.today()
     by_date = {}
@@ -144,7 +194,15 @@ def validate_eps(records, today=None):
         'lookback_end': recent[-1][0].isoformat() if len(recent) == 4 else None,
         'reason': '尚未接入並驗證完整的配股、股票分割與 EPS 追溯調整資料；不能判定為無風險',
     }
-    if consecutive:
+    if consecutive and stock:
+        corporate_action_risk = check_corporate_actions(
+            stock, corporate_action_risk['lookback_start'],
+            corporate_action_risk['lookback_end'])
+        if corporate_action_risk['status'] == 'risk_detected':
+            warnings.append('偵測到股票股利風險；TTM EPS 保持停用')
+        else:
+            warnings.append('股票分割及 EPS 調整仍未完整驗證；TTM EPS 保持停用')
+    elif consecutive:
         warnings.append('配股及股票分割風險尚未核實；TTM EPS 保持停用')
     return {
         'source': 'FinMind TaiwanStockFinancialStatements / EPS',
@@ -186,7 +244,7 @@ def build_one(stock, today):
                 eps.append({'date':x.get('date'),'value':x.get('value')})
         eps.sort(key=lambda x:str(x.get('date') or ''))
         # Financial dataset conventions can differ; show EPS as source data, never assume TTM without validated quarters.
-        result['financials']={'eps_records':[{'date':x['date'],'value':finite(x['value'])} for x in eps[-12:]],'eps_validation':validate_eps(eps,today),'note':'EPS 依 FinMind 回傳值呈現；配股、股票分割與追溯調整尚未核實，TTM EPS 保持停用。'}
+        result['financials']={'eps_records':[{'date':x['date'],'value':finite(x['value'])} for x in eps[-12:]],'eps_validation':validate_eps(eps,today,stock),'note':'EPS 依 FinMind 回傳值呈現；已增加股票股利風險訊號，股票分割與追溯調整仍未完整核實，TTM EPS 保持停用。'}
     except Exception as e:result['errors'].append('財報：'+str(e)[:180])
     try:
         rows=fetch('TaiwanStockMonthRevenue',stock,(today-dt.timedelta(days=500)).isoformat())

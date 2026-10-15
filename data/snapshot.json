@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-15T02:17:29.233736+00:00",
+  "generated_at_utc": "2026-10-15T02:26:14.472965+00:00",
   "provider": "FinMind API v4",
   "provider_url": "https://finmind.github.io/",
   "stocks": [
@@ -1421,6 +1421,9 @@
           "basis": "單季基本每股盈餘（依 FinMind 官方文件）",
           "latest_quarter": "2026-06-30",
           "quarter_count": 11,
+          "raw_record_count": 11,
+          "invalid_record_count": 0,
+          "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
           "ttm_eps": null,
           "ttm_status": "季度連續，但未驗證配股與股票分割調整",
@@ -1428,7 +1431,7 @@
             "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM"
           ]
         },
-        "note": "FinMind EPS 為單季值；未驗證配股／分割調整前，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
       },
       "monthly_revenue": [
         {
@@ -2921,6 +2924,9 @@
           "basis": "單季基本每股盈餘（依 FinMind 官方文件）",
           "latest_quarter": "2026-06-30",
           "quarter_count": 11,
+          "raw_record_count": 11,
+          "invalid_record_count": 0,
+          "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
           "ttm_eps": null,
           "ttm_status": "季度連續，但未驗證配股與股票分割調整",
@@ -2928,7 +2934,7 @@
             "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM"
           ]
         },
-        "note": "FinMind EPS 為單季值；未驗證配股／分割調整前，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
       },
       "monthly_revenue": [
         {
@@ -4421,6 +4427,9 @@
           "basis": "單季基本每股盈餘（依 FinMind 官方文件）",
           "latest_quarter": "2026-06-30",
           "quarter_count": 11,
+          "raw_record_count": 11,
+          "invalid_record_count": 0,
+          "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
           "ttm_eps": null,
           "ttm_status": "季度連續，但未驗證配股與股票分割調整",
@@ -4428,7 +4437,7 @@
             "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM"
           ]
         },
-        "note": "FinMind EPS 為單季值；未驗證配股／分割調整前，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
       },
       "monthly_revenue": [
         {
@@ -5921,6 +5930,9 @@
           "basis": "單季基本每股盈餘（依 FinMind 官方文件）",
           "latest_quarter": "2026-06-30",
           "quarter_count": 11,
+          "raw_record_count": 11,
+          "invalid_record_count": 0,
+          "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
           "ttm_eps": null,
           "ttm_status": "季度連續，但未驗證配股與股票分割調整",
@@ -5928,7 +5940,7 @@
             "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM"
           ]
         },
-        "note": "FinMind EPS 為單季值；未驗證配股／分割調整前，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
       },
       "monthly_revenue": [
         {
@@ -7421,6 +7433,9 @@
           "basis": "單季基本每股盈餘（依 FinMind 官方文件）",
           "latest_quarter": "2026-06-30",
           "quarter_count": 11,
+          "raw_record_count": 11,
+          "invalid_record_count": 0,
+          "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
           "ttm_eps": null,
           "ttm_status": "季度連續，但未驗證配股與股票分割調整",
@@ -7428,7 +7443,7 @@
             "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM"
           ]
         },
-        "note": "FinMind EPS 為單季值；未驗證配股／分割調整前，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
       },
       "monthly_revenue": [
         {
@@ -8921,6 +8936,9 @@
           "basis": "單季基本每股盈餘（依 FinMind 官方文件）",
           "latest_quarter": "2026-06-30",
           "quarter_count": 11,
+          "raw_record_count": 11,
+          "invalid_record_count": 0,
+          "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
           "ttm_eps": null,
           "ttm_status": "季度連續，但未驗證配股與股票分割調整",
@@ -8928,7 +8946,7 @@
             "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM"
           ]
         },
-        "note": "FinMind EPS 為單季值；未驗證配股／分割調整前，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
       },
       "monthly_revenue": [
         {
@@ -10419,6 +10437,9 @@
           "basis": "單季基本每股盈餘（依 FinMind 官方文件）",
           "latest_quarter": "2026-06-30",
           "quarter_count": 11,
+          "raw_record_count": 11,
+          "invalid_record_count": 0,
+          "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
           "ttm_eps": null,
           "ttm_status": "季度連續，但未驗證配股與股票分割調整",
@@ -10426,7 +10447,7 @@
             "FinMind 單季 EPS 可能因配股或分割跨季基準不一致，未驗證前不計算 TTM"
           ]
         },
-        "note": "FinMind EPS 為單季值；未驗證配股／分割調整前，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
       },
       "monthly_revenue": [
         {
@@ -11874,12 +11895,15 @@
           "basis": "單季基本每股盈餘（依 FinMind 官方文件）",
           "latest_quarter": null,
           "quarter_count": 0,
+          "raw_record_count": 0,
+          "invalid_record_count": 0,
+          "duplicate_quarter_count": 0,
           "last_four_consecutive": false,
           "ttm_eps": null,
           "ttm_status": "近四季 EPS 資料不足",
           "warnings": []
         },
-        "note": "FinMind EPS 為單季值；未驗證配股／分割調整前，不提供 TTM EPS。"
+        "note": "EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。"
       },
       "monthly_revenue": [],
       "revenue_analysis": {

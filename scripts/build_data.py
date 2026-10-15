@@ -90,6 +90,7 @@ def validate_eps(records, today=None):
     today = today or dt.date.today()
     by_date = {}
     warnings = []
+    invalid_count = 0
     for item in records:
         raw_date = item.get('date')
         value = finite(item.get('value'))
@@ -97,19 +98,25 @@ def validate_eps(records, today=None):
             d = dt.date.fromisoformat(str(raw_date)[:10])
         except (ValueError, TypeError):
             warnings.append(f'無效 EPS 財報日期：{str(raw_date)[:30]}')
+            invalid_count += 1
             continue
         if (d.month, d.day) not in ((3, 31), (6, 30), (9, 30), (12, 31)):
             warnings.append(f'{d.isoformat()} 不是標準季度結束日')
+            invalid_count += 1
             continue
         if d > today:
             warnings.append(f'{d.isoformat()} 是未來財報日期，已排除')
+            invalid_count += 1
             continue
         if value is None:
             warnings.append(f'{d.isoformat()} EPS 非有效數字')
+            invalid_count += 1
             continue
         by_date.setdefault(d, []).append(value)
+    duplicate_quarter_count = 0
     for d, values in sorted(by_date.items()):
         if len(values) != 1:
+            duplicate_quarter_count += 1
             warnings.append(f'{d.isoformat()} EPS 有 {len(values)} 筆，禁止重複計算')
     valid = sorted((d, vals[0]) for d, vals in by_date.items() if len(vals) == 1)
     latest = valid[-1][0] if valid else None
@@ -131,6 +138,9 @@ def validate_eps(records, today=None):
         'basis': '單季基本每股盈餘（依 FinMind 官方文件）',
         'latest_quarter': latest.isoformat() if latest else None,
         'quarter_count': len(valid),
+        'raw_record_count': len(records),
+        'invalid_record_count': invalid_count,
+        'duplicate_quarter_count': duplicate_quarter_count,
         'last_four_consecutive': consecutive,
         'ttm_eps': None,
         'ttm_status': status,
@@ -158,11 +168,10 @@ def build_one(stock, today):
         for x in rows:
             typ=str(x.get('type','')).strip().lower()
             if typ in ('eps','每股盈餘','earningspershare'):
-                v=finite(x.get('value'))
-                if v is not None:eps.append({'date':x.get('date'),'value':v})
-        eps.sort(key=lambda x:x['date'] or '')
+                eps.append({'date':x.get('date'),'value':x.get('value')})
+        eps.sort(key=lambda x:str(x.get('date') or ''))
         # Financial dataset conventions can differ; show EPS as source data, never assume TTM without validated quarters.
-        result['financials']={'eps_records':eps[-12:],'eps_validation':validate_eps(eps,today),'note':'FinMind EPS 為單季值；未驗證配股／分割調整前，不提供 TTM EPS。'}
+        result['financials']={'eps_records':[{'date':x['date'],'value':finite(x['value'])} for x in eps[-12:]],'eps_validation':validate_eps(eps,today),'note':'EPS 依 FinMind 回傳值呈現；單季口徑及配股／分割調整尚未逐筆驗證，不提供 TTM EPS。'}
     except Exception as e:result['errors'].append('財報：'+str(e)[:180])
     try:
         rows=fetch('TaiwanStockMonthRevenue',stock,(today-dt.timedelta(days=500)).isoformat())

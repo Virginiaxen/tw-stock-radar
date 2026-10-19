@@ -100,7 +100,7 @@ def check_corporate_actions(stock, lookback_start, lookback_end):
         report['reason'] = '不足四個連續季度，無法建立檢查期間'
         return report
     try:
-        rows = fetch('TaiwanStockDividend', stock, lookback_start)
+        rows = fetch('TaiwanStockDividend', stock, (dt.date.fromisoformat(lookback_start) - dt.timedelta(days=366)).isoformat())
     except Exception as e:
         report['reason'] = '股利資料讀取失敗，維持未驗證：' + str(e)[:140]
         return report
@@ -109,25 +109,39 @@ def check_corporate_actions(stock, lookback_start, lookback_end):
     # If absent or malformed, do not interpret as zero.
     unknown = False
     for row in rows:
-        raw_date = row.get('date')
-        try:
-            d = dt.date.fromisoformat(str(raw_date)[:10])
-        except (ValueError, TypeError):
+        if not isinstance(row, dict):
             unknown = True
             continue
-        if not (lookback_start <= d.isoformat() <= lookback_end):
-            continue
-        raw = row.get('StockEarningsDistribution')
-        val = finite(raw)
+        val = finite(row.get('StockEarningsDistribution'))
         if val is None:
             unknown = True
             continue
-        if val > 0:
-            report['events'].append({'date': d.isoformat(), 'kind': 'stock_dividend',
-                                     'value': val})
+        if val <= 0:
+            continue
+        dates = {}
+        for field in ('date', 'AnnouncementDate', 'StockExDividendTradingDate'):
+            raw = row.get(field)
+            if not raw:
+                continue
+            try:
+                dates[field] = dt.date.fromisoformat(str(raw)[:10])
+            except (ValueError, TypeError):
+                unknown = True
+        if not dates:
+            unknown = True
+            continue
+        matched = [field for field, day in dates.items()
+                   if lookback_start <= day.isoformat() <= lookback_end]
+        if matched:
+            report['events'].append({
+                'date': dates.get('date', next(iter(dates.values()))).isoformat(),
+                'kind': 'stock_dividend', 'value': val,
+                'matched_date_fields': matched,
+                'event_dates': {k: v.isoformat() for k, v in dates.items()}
+            })
     if report['events']:
         report['status'] = 'risk_detected'
-        report['reason'] = '偵測到股票股利；尚未驗證 EPS 是否已按股數變動追溯調整'
+        report['reason'] = '偵測到股票股利相關日期落在檢查期間；尚未驗證 EPS 是否追溯調整'
     elif unknown:
         report['reason'] = '股利資料欄位缺漏或日期異常，且股票分割未驗證'
     else:

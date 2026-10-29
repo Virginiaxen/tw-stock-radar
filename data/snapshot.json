@@ -1,24 +1,19 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-28T10:05:12.890643+00:00",
+  "generated_at_utc": "2026-10-29T10:07:05.701055+00:00",
   "provider": "FinMind API v4",
   "provider_url": "https://finmind.github.io/",
   "stocks": [
     {
       "id": "2330",
-      "updated_at": "2026-10-28",
+      "updated_at": "2026-10-29",
       "price": {
         "latest": {
-          "date": "2026-10-28",
-          "close": 2425.0,
-          "volume": 21866835.0
+          "date": "2026-10-29",
+          "close": 2415.0,
+          "volume": 18403916.0
         },
         "history": [
-          {
-            "date": "2025-09-12",
-            "close": 1260.0,
-            "volume": 28224895.0
-          },
           {
             "date": "2025-09-15",
             "close": 1255.0,
@@ -1363,11 +1358,16 @@
             "date": "2026-10-28",
             "close": 2425.0,
             "volume": 21866835.0
+          },
+          {
+            "date": "2026-10-29",
+            "close": 2415.0,
+            "volume": 18403916.0
           }
         ],
-        "ma20": 2478.5,
-        "ma60": 2429.0,
-        "rsi14": 23.21
+        "ma20": 2475.5,
+        "ma60": 2432.5,
+        "rsi14": 19.64
       },
       "financials": {
         "eps_records": [
@@ -1522,19 +1522,14 @@
     },
     {
       "id": "2317",
-      "updated_at": "2026-10-28",
+      "updated_at": "2026-10-29",
       "price": {
         "latest": {
-          "date": "2026-10-28",
-          "close": 251.5,
-          "volume": 42846204.0
+          "date": "2026-10-29",
+          "close": 248.0,
+          "volume": 21358260.0
         },
         "history": [
-          {
-            "date": "2025-09-12",
-            "close": 217.5,
-            "volume": 74001120.0
-          },
           {
             "date": "2025-09-15",
             "close": 216.0,
@@ -2879,11 +2874,16 @@
             "date": "2026-10-28",
             "close": 251.5,
             "volume": 42846204.0
+          },
+          {
+            "date": "2026-10-29",
+            "close": 248.0,
+            "volume": 21358260.0
           }
         ],
-        "ma20": 247.725,
-        "ma60": 250.675,
-        "rsi14": 47.75
+        "ma20": 247.6,
+        "ma60": 250.983,
+        "rsi14": 42.98
       },
       "financials": {
         "eps_records": [
@@ -3038,19 +3038,14 @@
     },
     {
       "id": "2454",
-      "updated_at": "2026-10-28",
+      "updated_at": "2026-10-29",
       "price": {
         "latest": {
-          "date": "2026-10-28",
-          "close": 4235.0,
-          "volume": 7645336.0
+          "date": "2026-10-29",
+          "close": 4045.0,
+          "volume": 6867223.0
         },
         "history": [
-          {
-            "date": "2025-09-12",
-            "close": 1485.0,
-            "volume": 4412355.0
-          },
           {
             "date": "2025-09-15",
             "close": 1485.0,
@@ -4395,11 +4390,16 @@
             "date": "2026-10-28",
             "close": 4235.0,
             "volume": 7645336.0
+          },
+          {
+            "date": "2026-10-29",
+            "close": 4045.0,
+            "volume": 6867223.0
           }
         ],
-        "ma20": 4569.75,
-        "ma60": 4325.833,
-        "rsi14": 21.82
+        "ma20": 4507.75,
+        "ma60": 4339.333,
+        "rsi14": 22.57
       },
       "financials": {
         "eps_records": [
@@ -4554,19 +4554,14 @@
     },
     {
       "id": "2308",
-      "updated_at": "2026-10-28",
+      "updated_at": "2026-10-29",
       "price": {
         "latest": {
-          "date": "2026-10-28",
-          "close": 1550.0,
-          "volume": 7474962.0
+          "date": "2026-10-29",
+          "close": 1480.0,
+          "volume": 17661692.0
         },
         "history": [
-          {
-            "date": "2025-09-12",
-            "close": 837.0,
-            "volume": 20358692.0
-          },
           {
             "date": "2025-09-15",
             "close": 836.0,
@@ -5911,11 +5906,16 @@
             "date": "2026-10-28",
             "close": 1550.0,
             "volume": 7474962.0
+          },
+          {
+            "date": "2026-10-29",
+            "close": 1480.0,
+            "volume": 17661692.0
           }
         ],
-        "ma20": 1782.5,
-        "ma60": 1763.333,
-        "rsi14": 17.73
+        "ma20": 1761.0,
+        "ma60": 1762.5,
+        "rsi14": 10.96
       },
       "financials": {
         "eps_records": [
@@ -5962,14 +5962,18 @@
           {
             "date": "2026-06-30",
             "value": 9.68
+          },
+          {
+            "date": "2026-09-30",
+            "value": 9.04
           }
         ],
         "eps_validation": {
           "source": "FinMind TaiwanStockFinancialStatements / EPS",
           "basis": "單季基本每股盈餘（依 FinMind 官方文件）",
-          "latest_quarter": "2026-06-30",
-          "quarter_count": 11,
-          "raw_record_count": 11,
+          "latest_quarter": "2026-09-30",
+          "quarter_count": 12,
+          "raw_record_count": 12,
           "invalid_record_count": 0,
           "duplicate_quarter_count": 0,
           "last_four_consecutive": true,
@@ -5978,8 +5982,8 @@
             "checked": true,
             "stock_dividend_verified": false,
             "stock_split_verified": false,
-            "lookback_start": "2025-09-30",
-            "lookback_end": "2026-06-30",
+            "lookback_start": "2025-12-31",
+            "lookback_end": "2026-09-30",
             "source": "FinMind TaiwanStockDividend",
             "events": [],
             "reason": "股利端點未發現正數股票股利；股票分割與歷史 EPS 調整仍未驗證"
@@ -6070,19 +6074,14 @@
     },
     {
       "id": "2882",
-      "updated_at": "2026-10-28",
+      "updated_at": "2026-10-29",
       "price": {
         "latest": {
-          "date": "2026-10-28",
-          "close": 115.5,
-          "volume": 20794493.0
+          "date": "2026-10-29",
+          "close": 116.5,
+          "volume": 10714366.0
         },
         "history": [
-          {
-            "date": "2025-09-12",
-            "close": 65.5,
-            "volume": 26813178.0
-          },
           {
             "date": "2025-09-15",
             "close": 65.4,
@@ -7427,11 +7426,16 @@
             "date": "2026-10-28",
             "close": 115.5,
             "volume": 20794493.0
+          },
+          {
+            "date": "2026-10-29",
+            "close": 116.5,
+            "volume": 10714366.0
           }
         ],
-        "ma20": 112.7,
-        "ma60": 107.78,
-        "rsi14": 58.0
+        "ma20": 113.0,
+        "ma60": 108.135,
+        "rsi14": 58.82
       },
       "financials": {
         "eps_records": [
@@ -7587,19 +7591,14 @@
     },
     {
       "id": "2891",
-      "updated_at": "2026-10-28",
+      "updated_at": "2026-10-29",
       "price": {
         "latest": {
-          "date": "2026-10-28",
-          "close": 74.2,
-          "volume": 23915490.0
+          "date": "2026-10-29",
+          "close": 75.3,
+          "volume": 38412046.0
         },
         "history": [
-          {
-            "date": "2025-09-12",
-            "close": 42.8,
-            "volume": 28591175.0
-          },
           {
             "date": "2025-09-15",
             "close": 43.15,
@@ -8944,11 +8943,16 @@
             "date": "2026-10-28",
             "close": 74.2,
             "volume": 23915490.0
+          },
+          {
+            "date": "2026-10-29",
+            "close": 75.3,
+            "volume": 38412046.0
           }
         ],
-        "ma20": 70.79,
-        "ma60": 67.943,
-        "rsi14": 71.79
+        "ma20": 71.13,
+        "ma60": 68.147,
+        "rsi14": 71.97
       },
       "financials": {
         "eps_records": [
@@ -9103,19 +9107,14 @@
     },
     {
       "id": "2603",
-      "updated_at": "2026-10-28",
+      "updated_at": "2026-10-29",
       "price": {
         "latest": {
-          "date": "2026-10-28",
-          "close": 263.0,
-          "volume": 6115999.0
+          "date": "2026-10-29",
+          "close": 261.0,
+          "volume": 5150170.0
         },
         "history": [
-          {
-            "date": "2025-09-12",
-            "close": 185.5,
-            "volume": 5544824.0
-          },
           {
             "date": "2025-09-15",
             "close": 183.5,
@@ -10460,11 +10459,16 @@
             "date": "2026-10-28",
             "close": 263.0,
             "volume": 6115999.0
+          },
+          {
+            "date": "2026-10-29",
+            "close": 261.0,
+            "volume": 5150170.0
           }
         ],
-        "ma20": 250.15,
-        "ma60": 236.292,
-        "rsi14": 71.43
+        "ma20": 251.05,
+        "ma60": 237.292,
+        "rsi14": 68.42
       },
       "financials": {
         "eps_records": [
@@ -10619,19 +10623,14 @@
     },
     {
       "id": "0050",
-      "updated_at": "2026-10-28",
+      "updated_at": "2026-10-29",
       "price": {
         "latest": {
-          "date": "2026-10-28",
-          "close": 108.65,
-          "volume": 53628148.0
+          "date": "2026-10-29",
+          "close": 107.25,
+          "volume": 86630134.0
         },
         "history": [
-          {
-            "date": "2025-09-12",
-            "close": 56.0,
-            "volume": 59101728.0
-          },
           {
             "date": "2025-09-15",
             "close": 56.0,
@@ -11976,11 +11975,16 @@
             "date": "2026-10-28",
             "close": 108.65,
             "volume": 53628148.0
+          },
+          {
+            "date": "2026-10-29",
+            "close": 107.25,
+            "volume": 86630134.0
           }
         ],
-        "ma20": 111.435,
-        "ma60": 107.834,
-        "rsi14": 26.75
+        "ma20": 111.178,
+        "ma60": 108.063,
+        "rsi14": 22.05
       },
       "financials": {
         "eps_records": [],

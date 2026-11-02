@@ -1,24 +1,19 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-30T10:07:35.929474+00:00",
+  "generated_at_utc": "2026-11-02T10:23:50.784409+00:00",
   "provider": "FinMind API v4",
   "provider_url": "https://finmind.github.io/",
   "stocks": [
     {
       "id": "2330",
-      "updated_at": "2026-10-30",
+      "updated_at": "2026-11-02",
       "price": {
         "latest": {
-          "date": "2026-10-30",
-          "close": 2370.0,
-          "volume": 36615931.0
+          "date": "2026-11-02",
+          "close": 2330.0,
+          "volume": 41165068.0
         },
         "history": [
-          {
-            "date": "2025-09-16",
-            "close": 1280.0,
-            "volume": 42279997.0
-          },
           {
             "date": "2025-09-17",
             "close": 1265.0,
@@ -1363,11 +1358,16 @@
             "date": "2026-10-30",
             "close": 2370.0,
             "volume": 36615931.0
+          },
+          {
+            "date": "2026-11-02",
+            "close": 2330.0,
+            "volume": 41165068.0
           }
         ],
-        "ma20": 2470.25,
-        "ma60": 2431.583,
-        "rsi14": 16.92
+        "ma20": 2462.75,
+        "ma60": 2430.917,
+        "rsi14": 16.67
       },
       "financials": {
         "eps_records": [
@@ -1448,10 +1448,6 @@
       },
       "monthly_revenue": [
         {
-          "date": "2025-07-01",
-          "revenue": 263708978000.0
-        },
-        {
           "date": "2025-08-01",
           "revenue": 323165707000.0
         },
@@ -1506,35 +1502,32 @@
         {
           "date": "2026-09-01",
           "revenue": 514805337000.0
+        },
+        {
+          "date": "2026-10-01",
+          "revenue": 511857399000.0
         }
       ],
       "revenue_analysis": {
-        "latest_month": "2026-09",
-        "latest_revenue": 514805337000.0,
-        "prior_year_revenue": 335771691000.0,
-        "yoy_pct": 53.32,
+        "latest_month": "2026-10",
+        "latest_revenue": 511857399000.0,
+        "prior_year_revenue": 330980920000.0,
+        "yoy_pct": 54.65,
         "yoy_status": "已計算",
-        "warnings": [
-          "2026-10 尚未結束或屬未來月份，已排除，請核對 FinMind 日期定義"
-        ]
+        "warnings": []
       },
       "errors": []
     },
     {
       "id": "2317",
-      "updated_at": "2026-10-30",
+      "updated_at": "2026-11-02",
       "price": {
         "latest": {
-          "date": "2026-10-30",
-          "close": 245.5,
-          "volume": 33591959.0
+          "date": "2026-11-02",
+          "close": 251.0,
+          "volume": 49948127.0
         },
         "history": [
-          {
-            "date": "2025-09-16",
-            "close": 215.5,
-            "volume": 50810161.0
-          },
           {
             "date": "2025-09-17",
             "close": 212.0,
@@ -2879,11 +2872,16 @@
             "date": "2026-10-30",
             "close": 245.5,
             "volume": 33591959.0
+          },
+          {
+            "date": "2026-11-02",
+            "close": 251.0,
+            "volume": 49948127.0
           }
         ],
-        "ma20": 247.35,
-        "ma60": 250.9,
-        "rsi14": 44.14
+        "ma20": 247.325,
+        "ma60": 250.867,
+        "rsi14": 51.72
       },
       "financials": {
         "eps_records": [
@@ -2964,10 +2962,6 @@
       },
       "monthly_revenue": [
         {
-          "date": "2025-07-01",
-          "revenue": 540236697000.0
-        },
-        {
           "date": "2025-08-01",
           "revenue": 613864601000.0
         },
@@ -3022,35 +3016,32 @@
         {
           "date": "2026-09-01",
           "revenue": 921766023000.0
+        },
+        {
+          "date": "2026-10-01",
+          "revenue": 1158633235000.0
         }
       ],
       "revenue_analysis": {
-        "latest_month": "2026-09",
-        "latest_revenue": 921766023000.0,
-        "prior_year_revenue": 606512275000.0,
-        "yoy_pct": 51.98,
+        "latest_month": "2026-10",
+        "latest_revenue": 1158633235000.0,
+        "prior_year_revenue": 837067572000.0,
+        "yoy_pct": 38.42,
         "yoy_status": "已計算",
-        "warnings": [
-          "2026-10 尚未結束或屬未來月份，已排除，請核對 FinMind 日期定義"
-        ]
+        "warnings": []
       },
       "errors": []
     },
     {
       "id": "2454",
-      "updated_at": "2026-10-30",
+      "updated_at": "2026-11-02",
       "price": {
         "latest": {
-          "date": "2026-10-30",
-          "close": 3915.0,
-          "volume": 13044171.0
+          "date": "2026-11-02",
+          "close": 3970.0,
+          "volume": 12465098.0
         },
         "history": [
-          {
-            "date": "2025-09-16",
-            "close": 1535.0,
-            "volume": 8933496.0
-          },
           {
             "date": "2025-09-17",
             "close": 1510.0,
@@ -4395,11 +4386,16 @@
             "date": "2026-10-30",
             "close": 3915.0,
             "volume": 13044171.0
+          },
+          {
+            "date": "2026-11-02",
+            "close": 3970.0,
+            "volume": 12465098.0
           }
         ],
-        "ma20": 4458.0,
-        "ma60": 4345.333,
-        "rsi14": 21.95
+        "ma20": 4410.5,
+        "ma60": 4346.333,
+        "rsi14": 26.77
       },
       "financials": {
         "eps_records": [
@@ -4480,10 +4476,6 @@
       },
       "monthly_revenue": [
         {
-          "date": "2025-07-01",
-          "revenue": 56433621000.0
-        },
-        {
           "date": "2025-08-01",
           "revenue": 43220164000.0
         },
@@ -4538,35 +4530,32 @@
         {
           "date": "2026-09-01",
           "revenue": 64183361000.0
+        },
+        {
+          "date": "2026-10-01",
+          "revenue": 55399497000.0
         }
       ],
       "revenue_analysis": {
-        "latest_month": "2026-09",
-        "latest_revenue": 64183361000.0,
-        "prior_year_revenue": 44546643000.0,
-        "yoy_pct": 44.08,
+        "latest_month": "2026-10",
+        "latest_revenue": 55399497000.0,
+        "prior_year_revenue": 54330057000.0,
+        "yoy_pct": 1.97,
         "yoy_status": "已計算",
-        "warnings": [
-          "2026-10 尚未結束或屬未來月份，已排除，請核對 FinMind 日期定義"
-        ]
+        "warnings": []
       },
       "errors": []
     },
     {
       "id": "2308",
-      "updated_at": "2026-10-30",
+      "updated_at": "2026-11-02",
       "price": {
         "latest": {
-          "date": "2026-10-30",
-          "close": 1335.0,
-          "volume": 23167211.0
+          "date": "2026-11-02",
+          "close": 1355.0,
+          "volume": 22008409.0
         },
         "history": [
-          {
-            "date": "2025-09-16",
-            "close": 841.0,
-            "volume": 15636646.0
-          },
           {
             "date": "2025-09-17",
             "close": 836.0,
@@ -5911,11 +5900,16 @@
             "date": "2026-10-30",
             "close": 1335.0,
             "volume": 23167211.0
+          },
+          {
+            "date": "2026-11-02",
+            "close": 1355.0,
+            "volume": 22008409.0
           }
         ],
-        "ma20": 1736.0,
-        "ma60": 1757.417,
-        "rsi14": 9.82
+        "ma20": 1709.25,
+        "ma60": 1753.667,
+        "rsi14": 12.35
       },
       "financials": {
         "eps_records": [
@@ -6000,10 +5994,6 @@
       },
       "monthly_revenue": [
         {
-          "date": "2025-07-01",
-          "revenue": 42208156000.0
-        },
-        {
           "date": "2025-08-01",
           "revenue": 45397038000.0
         },
@@ -6058,35 +6048,32 @@
         {
           "date": "2026-09-01",
           "revenue": 64586049000.0
+        },
+        {
+          "date": "2026-10-01",
+          "revenue": 65399563000.0
         }
       ],
       "revenue_analysis": {
-        "latest_month": "2026-09",
-        "latest_revenue": 64586049000.0,
-        "prior_year_revenue": 47859758000.0,
-        "yoy_pct": 34.95,
+        "latest_month": "2026-10",
+        "latest_revenue": 65399563000.0,
+        "prior_year_revenue": 57060781000.0,
+        "yoy_pct": 14.61,
         "yoy_status": "已計算",
-        "warnings": [
-          "2026-10 尚未結束或屬未來月份，已排除，請核對 FinMind 日期定義"
-        ]
+        "warnings": []
       },
       "errors": []
     },
     {
       "id": "2882",
-      "updated_at": "2026-10-30",
+      "updated_at": "2026-11-02",
       "price": {
         "latest": {
-          "date": "2026-10-30",
+          "date": "2026-11-02",
           "close": 116.0,
-          "volume": 20393127.0
+          "volume": 28339355.0
         },
         "history": [
-          {
-            "date": "2025-09-16",
-            "close": 66.1,
-            "volume": 26261776.0
-          },
           {
             "date": "2025-09-17",
             "close": 65.7,
@@ -7431,11 +7418,16 @@
             "date": "2026-10-30",
             "close": 116.0,
             "volume": 20393127.0
+          },
+          {
+            "date": "2026-11-02",
+            "close": 116.0,
+            "volume": 28339355.0
           }
         ],
-        "ma20": 113.225,
-        "ma60": 108.377,
-        "rsi14": 56.0
+        "ma20": 113.475,
+        "ma60": 108.635,
+        "rsi14": 63.64
       },
       "financials": {
         "eps_records": [
@@ -7516,10 +7508,6 @@
       },
       "monthly_revenue": [
         {
-          "date": "2025-07-01",
-          "revenue": -1721092000.0
-        },
-        {
           "date": "2025-08-01",
           "revenue": 36892402000.0
         },
@@ -7574,36 +7562,34 @@
         {
           "date": "2026-09-01",
           "revenue": 29486864000.0
+        },
+        {
+          "date": "2026-10-01",
+          "revenue": 20405136000.0
         }
       ],
       "revenue_analysis": {
-        "latest_month": "2026-09",
-        "latest_revenue": 29486864000.0,
-        "prior_year_revenue": 46429024000.0,
-        "yoy_pct": -36.49,
+        "latest_month": "2026-10",
+        "latest_revenue": 20405136000.0,
+        "prior_year_revenue": 34686259000.0,
+        "yoy_pct": -41.17,
         "yoy_status": "已計算",
         "warnings": [
-          "2025-07 月營收為負數，請核對來源與會計口徑",
-          "2026-10 尚未結束或屬未來月份，已排除，請核對 FinMind 日期定義"
+          "2025-07 月營收為負數，請核對來源與會計口徑"
         ]
       },
       "errors": []
     },
     {
       "id": "2891",
-      "updated_at": "2026-10-30",
+      "updated_at": "2026-11-02",
       "price": {
         "latest": {
-          "date": "2026-10-30",
-          "close": 75.8,
-          "volume": 50114684.0
+          "date": "2026-11-02",
+          "close": 75.0,
+          "volume": 47037762.0
         },
         "history": [
-          {
-            "date": "2025-09-16",
-            "close": 43.45,
-            "volume": 51336233.0
-          },
           {
             "date": "2025-09-17",
             "close": 43.1,
@@ -8948,11 +8934,16 @@
             "date": "2026-10-30",
             "close": 75.8,
             "volume": 50114684.0
+          },
+          {
+            "date": "2026-11-02",
+            "close": 75.0,
+            "volume": 47037762.0
           }
         ],
-        "ma20": 71.485,
-        "ma60": 68.328,
-        "rsi14": 72.33
+        "ma20": 71.815,
+        "ma60": 68.498,
+        "rsi14": 75.16
       },
       "financials": {
         "eps_records": [
@@ -9033,10 +9024,6 @@
       },
       "monthly_revenue": [
         {
-          "date": "2025-07-01",
-          "revenue": 26892657000.0
-        },
-        {
           "date": "2025-08-01",
           "revenue": 10546858000.0
         },
@@ -9091,35 +9078,32 @@
         {
           "date": "2026-09-01",
           "revenue": 24401509000.0
+        },
+        {
+          "date": "2026-10-01",
+          "revenue": 21331939000.0
         }
       ],
       "revenue_analysis": {
-        "latest_month": "2026-09",
-        "latest_revenue": 24401509000.0,
-        "prior_year_revenue": 25028996000.0,
-        "yoy_pct": -2.51,
+        "latest_month": "2026-10",
+        "latest_revenue": 21331939000.0,
+        "prior_year_revenue": 28972659000.0,
+        "yoy_pct": -26.37,
         "yoy_status": "已計算",
-        "warnings": [
-          "2026-10 尚未結束或屬未來月份，已排除，請核對 FinMind 日期定義"
-        ]
+        "warnings": []
       },
       "errors": []
     },
     {
       "id": "2603",
-      "updated_at": "2026-10-30",
+      "updated_at": "2026-11-02",
       "price": {
         "latest": {
-          "date": "2026-10-30",
-          "close": 271.5,
-          "volume": 23405895.0
+          "date": "2026-11-02",
+          "close": 274.5,
+          "volume": 12536096.0
         },
         "history": [
-          {
-            "date": "2025-09-16",
-            "close": 183.5,
-            "volume": 6130023.0
-          },
           {
             "date": "2025-09-17",
             "close": 183.5,
@@ -10464,11 +10448,16 @@
             "date": "2026-10-30",
             "close": 271.5,
             "volume": 23405895.0
+          },
+          {
+            "date": "2026-11-02",
+            "close": 274.5,
+            "volume": 12536096.0
           }
         ],
-        "ma20": 252.725,
-        "ma60": 238.417,
-        "rsi14": 76.71
+        "ma20": 254.475,
+        "ma60": 239.533,
+        "rsi14": 77.63
       },
       "financials": {
         "eps_records": [
@@ -10549,10 +10538,6 @@
       },
       "monthly_revenue": [
         {
-          "date": "2025-07-01",
-          "revenue": 30109881000.0
-        },
-        {
           "date": "2025-08-01",
           "revenue": 33605171000.0
         },
@@ -10607,35 +10592,32 @@
         {
           "date": "2026-09-01",
           "revenue": 48985697000.0
+        },
+        {
+          "date": "2026-10-01",
+          "revenue": 49711309000.0
         }
       ],
       "revenue_analysis": {
-        "latest_month": "2026-09",
-        "latest_revenue": 48985697000.0,
-        "prior_year_revenue": 32956841000.0,
-        "yoy_pct": 48.64,
+        "latest_month": "2026-10",
+        "latest_revenue": 49711309000.0,
+        "prior_year_revenue": 30120944000.0,
+        "yoy_pct": 65.04,
         "yoy_status": "已計算",
-        "warnings": [
-          "2026-10 尚未結束或屬未來月份，已排除，請核對 FinMind 日期定義"
-        ]
+        "warnings": []
       },
       "errors": []
     },
     {
       "id": "0050",
-      "updated_at": "2026-10-30",
+      "updated_at": "2026-11-02",
       "price": {
         "latest": {
-          "date": "2026-10-30",
-          "close": 104.95,
-          "volume": 227283960.0
+          "date": "2026-11-02",
+          "close": 104.1,
+          "volume": 160932537.0
         },
         "history": [
-          {
-            "date": "2025-09-16",
-            "close": 56.75,
-            "volume": 65388179.0
-          },
           {
             "date": "2025-09-17",
             "close": 56.35,
@@ -11980,11 +11962,16 @@
             "date": "2026-10-30",
             "close": 104.95,
             "volume": 227283960.0
+          },
+          {
+            "date": "2026-11-02",
+            "close": 104.1,
+            "volume": 160932537.0
           }
         ],
-        "ma20": 110.86,
-        "ma60": 108.098,
-        "rsi14": 19.84
+        "ma20": 110.463,
+        "ma60": 108.133,
+        "rsi14": 20.11
       },
       "financials": {
         "eps_records": [],
